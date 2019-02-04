@@ -7,7 +7,6 @@ public class MoveEnemy : MonoBehaviour
 
     public Vector2 speed;
     private Vector2 movement;
-    private float spriteMove;
 
     // Use this for initialization
     void Start()

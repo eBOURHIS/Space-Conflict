@@ -44,10 +44,10 @@ public class posAsteroid : MonoBehaviour {
     {
         if (collider.name == "ship")
         {
-            //Debug.Log(collider.name);
             DestroyGameObject();
-        } 
-            
+            ExplosionSound.Instance.TouchButtonSound();
+        }
+
     }
 
     void DestroyGameObject()

@@ -17,7 +17,6 @@ public class gameMusic : MonoBehaviour
         }
         else if (this != Instance)
         {
-            Debug.Log("Détruit");
             Destroy(this.gameObject);
         }
         TouchButtonSound();

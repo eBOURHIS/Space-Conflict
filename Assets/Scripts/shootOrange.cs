@@ -43,6 +43,7 @@ public class shootOrange : MonoBehaviour {
         GameState.Instance.addScorePlayer(1);
         // Shoot destroy 
         Destroy(gameObject);
+        ExplosionSound.Instance.TouchButtonSound();
     }
 
     void DestroyGameObject()
