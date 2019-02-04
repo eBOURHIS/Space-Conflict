@@ -16,11 +16,7 @@ public class shootOrange : MonoBehaviour {
     void Start () {
 
         //Calcul des angles avec conversion du monde de la caméra au mmonde du pixel pour chaque coin
-        leftBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
         rightBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
-        leftTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
-        rightTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
-
     }
 	
 	// Update is called once per frame

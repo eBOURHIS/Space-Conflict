@@ -7,6 +7,7 @@ public class GameState : MonoBehaviour {
 
     public static GameState Instance;
     private int scorePlayer = 0;
+    private int lifePlayer = 5;
 
     // Use this for initialization
     void Start () {
@@ -27,7 +28,7 @@ public class GameState : MonoBehaviour {
 	void Update () {
 
         GameObject.FindWithTag("scoreLabel").GetComponent<Text>().text = "" + scorePlayer;
-
+  
     }
 
     public void addScorePlayer(int toAdd)
@@ -38,5 +39,15 @@ public class GameState : MonoBehaviour {
     public int getScorePlayer()
     {
         return scorePlayer;
+    }
+
+    public void RemoveLifePlayer(int toRemove)
+    {
+        lifePlayer -= toRemove;
+    }
+
+    public int getLifePlayer()
+    {
+        return lifePlayer;
     }
 }

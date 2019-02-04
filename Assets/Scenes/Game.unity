@@ -434,7 +434,6 @@ GameObject:
   - component: {fileID: 443583863}
   - component: {fileID: 443583867}
   - component: {fileID: 443583868}
-  - component: {fileID: 443583869}
   - component: {fileID: 443583870}
   - component: {fileID: 443583871}
   m_Layer: 0
@@ -566,6 +565,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: {x: 10, y: 10}
+  asteroid: []
 --- !u!114 &443583868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -576,18 +576,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b5aa7afa2f47a2d4d8db43769129e601, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &443583869
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 443583862}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d53632f6f950eed4c9b94d874ea6dbd0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &443583870

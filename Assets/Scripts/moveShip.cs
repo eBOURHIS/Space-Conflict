@@ -1,21 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class moveShip : MonoBehaviour {
 
     //1 - La vitesse de déplacement
     public Vector2 speed;
-
+    public GameObject[] asteroid;
     private Vector2 movement;
 
     // Use this for initialization
     void Start () {
-        
-	}
-	
-	// Update is called once per frame
-	void Update () {
+
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         //Récupération des informations du clavier/manette
         float inputY = Input.GetAxis("Vertical");
@@ -27,14 +28,23 @@ public class moveShip : MonoBehaviour {
             speed.y * inputY);
 
         GetComponent<Rigidbody2D>().velocity = movement;
+        asteroid = GameObject.FindGameObjectsWithTag("asteroid");
+
     }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (GetComponent<Collider2D>().name == "asteroid" || GetComponent<Collider2D>().name == "enemy_spaceship")
+        if (asteroid.Length > 0)
         {
-            if (GameObject.FindGameObjectWithTag("life1") == null)
+            if(GameState.Instance.getLifePlayer() > 0)
+            {
+                GameState.Instance.RemoveLifePlayer(1);
+
+            } else
+            {
                 Destroy(gameObject);
+                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            }
         }
     }
 }
