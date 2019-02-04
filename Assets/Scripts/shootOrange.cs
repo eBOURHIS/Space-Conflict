@@ -6,11 +6,22 @@ public class shootOrange : MonoBehaviour {
 
     private Vector2 movement;
     public Vector2 speed;
+    private Vector3 leftBottomCameraBorder;
+    private Vector3 rightBottomCameraBorder;
+    private Vector3 rightTopCameraBorder;
+    private Vector3 leftTopCameraBorder;
+    private Vector2 size;
 
     // Use this for initialization
     void Start () {
-		
-	}
+
+        //Calcul des angles avec conversion du monde de la caméra au mmonde du pixel pour chaque coin
+        leftBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        rightBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
+        leftTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
+        rightTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -20,6 +31,13 @@ public class shootOrange : MonoBehaviour {
             speed.y * 0);
 
         GetComponent<Rigidbody2D>().velocity = movement;
+
+        size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
+        size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
+
+
+        if (transform.position.x > rightBottomCameraBorder.x + (size.x / 2))
+            DestroyGameObject();
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -28,6 +46,11 @@ public class shootOrange : MonoBehaviour {
         collider.gameObject.AddComponent<Destroy>();
         GameState.Instance.addScorePlayer(1);
         // Shoot destroy 
+        Destroy(gameObject);
+    }
+
+    void DestroyGameObject()
+    {
         Destroy(gameObject);
     }
 
