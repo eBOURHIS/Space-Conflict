@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveAsteroid : MonoBehaviour
+public class MoveEnemy : MonoBehaviour
 {
 
     public Vector2 speed;

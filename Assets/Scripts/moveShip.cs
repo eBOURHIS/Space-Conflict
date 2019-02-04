@@ -36,7 +36,7 @@ public class moveShip : MonoBehaviour {
     {
         if (asteroid.Length > 0)
         {
-            if(GameState.Instance.getLifePlayer() > 0)
+            if(GameState.Instance.getLifePlayer() > 1)
             {
                 GameState.Instance.RemoveLifePlayer(1);
 
