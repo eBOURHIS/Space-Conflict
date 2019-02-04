@@ -7,7 +7,7 @@ public class AsteroidManager : MonoBehaviour
     public GameObject[] respawns;
     private Vector3 rightBottomCameraBorder;
     private Vector3 rightTopCameraBorder;
-    public Vector3 tmppos;
+    private Vector3 tmppos;
     private Vector2 size;
 
 

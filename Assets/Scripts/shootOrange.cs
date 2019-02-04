@@ -6,10 +6,7 @@ public class shootOrange : MonoBehaviour {
 
     private Vector2 movement;
     public Vector2 speed;
-    private Vector3 leftBottomCameraBorder;
     private Vector3 rightBottomCameraBorder;
-    private Vector3 rightTopCameraBorder;
-    private Vector3 leftTopCameraBorder;
     private Vector2 size;
 
     // Use this for initialization
@@ -38,7 +35,6 @@ public class shootOrange : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        // Add the fade script to the gameObject containing this script
         collider.gameObject.AddComponent<Destroy>();
         GameState.Instance.addScorePlayer(1);
         // Shoot destroy 

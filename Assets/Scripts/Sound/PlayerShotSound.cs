@@ -2,23 +2,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExplosionSound : MonoBehaviour
+public class PlayerShotSound : MonoBehaviour
 {
-    public static ExplosionSound Instance;
-    public AudioClip explosionSound;
+    public static PlayerShotSound Instance;
+    public AudioClip playerShotSound;
 
     // Use this for initialization
     void Start()
     {
-        if (Instance == null)
-        {
-            Instance = this;
-            DontDestroyOnLoad(Instance.gameObject);
-        }
-        else if (this != Instance)
-        {
-            Destroy(this.gameObject);
-        }
+        Instance = this;
     }
 
     // Update is called once per frame
@@ -29,7 +21,7 @@ public class ExplosionSound : MonoBehaviour
 
     public void TouchButtonSound()
     {
-        MakeSound(explosionSound);
+        MakeSound(playerShotSound);
     }
 
     /// Play a sound

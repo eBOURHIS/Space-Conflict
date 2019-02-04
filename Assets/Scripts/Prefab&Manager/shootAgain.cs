@@ -25,7 +25,7 @@ public class shootAgain : MonoBehaviour {
 
             //On instantie le tir
             GameObject gY = Instantiate(Resources.Load("shootOrange"), tmppos, Quaternion.identity) as GameObject;
-            SoundState.Instance.TouchButtonSound();
+            PlayerShotSound.Instance.TouchButtonSound();
         }
     }
 }

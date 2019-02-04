@@ -15,6 +15,7 @@ public class posEnemyShip : MonoBehaviour
     private Vector3 rightTopCameraBorder;
     private Vector3 leftTopCameraBorder;
     private Vector2 size;
+    SpriteRenderer mySpriteRenderer;
 
     // Use this for initialization
     void Start()
@@ -24,6 +25,7 @@ public class posEnemyShip : MonoBehaviour
         rightBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
         leftTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
         rightTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
 
@@ -31,6 +33,8 @@ public class posEnemyShip : MonoBehaviour
     {
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
+
+        mySpriteRenderer.flipY = true;
 
         GetComponent<Rigidbody2D>().velocity = new Vector2(-5, 0);
 
