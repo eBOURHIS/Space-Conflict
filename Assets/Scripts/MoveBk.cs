@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class moveBkMenu : MonoBehaviour
+public class MoveBk : MonoBehaviour
 {
 
     public Vector2 movement;
@@ -14,7 +14,7 @@ public class moveBkMenu : MonoBehaviour
     void Start()
     {
         movement = new Vector2(-1, 0);
-        positionRestartX = 26.45f;
+        positionRestartX = 78.23412f;
         leftBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
     }
 
