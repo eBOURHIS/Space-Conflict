@@ -26,7 +26,7 @@ public class shootOrange : MonoBehaviour {
         GetComponent<Rigidbody2D>().velocity = movement;
 
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
-        size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
+        size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
 
 
         if (transform.position.x > rightBottomCameraBorder.x + (size.x / 2))
@@ -37,6 +37,7 @@ public class shootOrange : MonoBehaviour {
     {
         collider.gameObject.AddComponent<Destroy>();
         GameState.Instance.addScorePlayer(1);
+
         // Shoot destroy 
         Destroy(gameObject);
         ExplosionSound.Instance.TouchButtonSound();

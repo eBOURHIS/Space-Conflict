@@ -22,14 +22,17 @@ public class AsteroidManager : MonoBehaviour
     void Update()
     {
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
-        size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
+        size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
         respawns = GameObject.FindGameObjectsWithTag("asteroid");
 
         if (respawns.Length < 10)
         {
-            if (Random.Range(1,100) == 50 || respawns.Length < 4)
+            if (Random.Range(1,1000) == 500 || respawns.Length < 4)
             {
-                tmppos = new Vector3(Random.Range(rightBottomCameraBorder.x, rightTopCameraBorder.x), Random.Range(rightBottomCameraBorder.y, rightTopCameraBorder.y), transform.position.z);
+                tmppos = new Vector3(rightBottomCameraBorder.x + (size.x / 2),
+                                    Random.Range(rightBottomCameraBorder.y + (size.y / 2),
+                                    (rightTopCameraBorder.y - (size.y / 2))),
+                                    transform.position.z);
 
                 GameObject gY = Instantiate(Resources.Load("asteroid"), tmppos, Quaternion.identity) as GameObject;
             }

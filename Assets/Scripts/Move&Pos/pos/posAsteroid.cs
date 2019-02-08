@@ -9,8 +9,6 @@ public class posAsteroid : MonoBehaviour {
     public float turnSpeed = 6f;
 
 
-    // Stockage du mouvement
-    private Vector2 movement;
     private Vector3 leftBottomCameraBorder;
     private Vector3 rightBottomCameraBorder;
     private Vector3 rightTopCameraBorder;
@@ -27,13 +25,11 @@ public class posAsteroid : MonoBehaviour {
         rightTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
     }
 
-
     void Update()
     {
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
-        size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
+        size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
 
-        GetComponent<Rigidbody2D>().velocity = new Vector2(-5, 0);
         transform.Rotate(Time.deltaTime, 0, turnSpeed);
 
         if (transform.position.x < leftBottomCameraBorder.x + (size.x / 2))
@@ -47,7 +43,6 @@ public class posAsteroid : MonoBehaviour {
             DestroyGameObject();
             ExplosionSound.Instance.TouchButtonSound();
         }
-
     }
 
     void DestroyGameObject()

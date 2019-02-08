@@ -7,7 +7,7 @@ public class moveShip : MonoBehaviour {
 
     //1 - La vitesse de déplacement
     public Vector2 speed;
-    public GameObject[] asteroid;
+    private GameObject[] asteroid;
     private Vector2 movement;
 
     // Use this for initialization

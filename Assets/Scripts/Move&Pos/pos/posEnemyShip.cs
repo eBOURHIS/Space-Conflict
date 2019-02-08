@@ -6,16 +6,13 @@ public class posEnemyShip : MonoBehaviour
 {
     public float scrollSpeed;
     public float tileSizeZ;
-    public float turnSpeed = 6f;
 
     // Stockage du mouvement
-    private Vector2 movement;
     private Vector3 leftBottomCameraBorder;
     private Vector3 rightBottomCameraBorder;
     private Vector3 rightTopCameraBorder;
     private Vector3 leftTopCameraBorder;
     private Vector2 size;
-    SpriteRenderer mySpriteRenderer;
 
     // Use this for initialization
     void Start()
@@ -25,18 +22,15 @@ public class posEnemyShip : MonoBehaviour
         rightBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
         leftTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
         rightTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
-        mySpriteRenderer = GetComponent<SpriteRenderer>();
     }
 
 
     void Update()
     {
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
-        size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
+        size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
 
-        mySpriteRenderer.flipY = true;
-
-        GetComponent<Rigidbody2D>().velocity = new Vector2(-5, 0);
+        gameObject.GetComponent<SpriteRenderer>().flipX = true;
 
         if (transform.position.x < leftBottomCameraBorder.x + (size.x / 2))
             DestroyGameObject();

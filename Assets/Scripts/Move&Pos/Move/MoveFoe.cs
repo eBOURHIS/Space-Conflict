@@ -6,7 +6,6 @@ public class MoveFoe : MonoBehaviour
 {
 
     public Vector2 speed;
-    private Vector2 movement;
 
     // Use this for initialization
     void Start()
@@ -17,13 +16,7 @@ public class MoveFoe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        // Calcul du mouvement
-        movement = new Vector2(
-            speed.x * 1,
-            speed.y * 0);
-
-        GetComponent<Rigidbody2D>().velocity = movement;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(-5, 0);
     }
 
     void OnTriggerEnter2D(Collider2D collider)
