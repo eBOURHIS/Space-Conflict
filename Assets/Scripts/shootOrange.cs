@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class shootOrange : MonoBehaviour {
 
-    private Vector2 movement;
-    public Vector2 speed;
     private Vector3 rightBottomCameraBorder;
     private Vector2 size;
+    private GameObject[] plus;
 
     // Use this for initialization
     void Start () {
@@ -19,15 +18,12 @@ public class shootOrange : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        movement = new Vector2(
-            speed.x * 1,
-            speed.y * 0);
-
-        GetComponent<Rigidbody2D>().velocity = movement;
+        GetComponent<Rigidbody2D>().velocity = new Vector2(30, 0);
 
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
 
+        plus = GameObject.FindGameObjectsWithTag("plus");
 
         if (transform.position.x > rightBottomCameraBorder.x + (size.x / 2))
             DestroyGameObject();
@@ -35,12 +31,12 @@ public class shootOrange : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        collider.gameObject.AddComponent<Destroy>();
-        GameState.Instance.addScorePlayer(1);
-
-        // Shoot destroy 
-        Destroy(gameObject);
-        ExplosionSound.Instance.TouchButtonSound();
+            collider.gameObject.AddComponent<Destroy>();
+            GameState.Instance.addScorePlayer(1);
+            GameObject gY = Instantiate(Resources.Load("plus"), new Vector3(4, 4, 0), Quaternion.identity) as GameObject;
+            // Shoot destroy 
+            Destroy(gameObject);
+            ExplosionSound.Instance.TouchButtonSound();
     }
 
     void DestroyGameObject()

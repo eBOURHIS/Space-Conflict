@@ -41,6 +41,7 @@ public class posEnemyShip : MonoBehaviour
         if (collider.name == "ship")
         {
             DestroyGameObject();
+            ExplosionSound.Instance.TouchButtonSound();
         }
     }
 

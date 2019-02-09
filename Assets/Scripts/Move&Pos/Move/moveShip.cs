@@ -39,7 +39,6 @@ public class moveShip : MonoBehaviour {
             if(GameState.Instance.getLifePlayer() > 1)
             {
                 GameState.Instance.RemoveLifePlayer(1);
-
             } else
             {
                 Destroy(gameObject);
