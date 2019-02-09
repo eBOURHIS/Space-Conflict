@@ -6,7 +6,6 @@ public class shootOrange : MonoBehaviour {
 
     private Vector3 rightBottomCameraBorder;
     private Vector2 size;
-    private GameObject[] plus;
 
     // Use this for initialization
     void Start () {
@@ -23,8 +22,6 @@ public class shootOrange : MonoBehaviour {
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
 
-        plus = GameObject.FindGameObjectsWithTag("plus");
-
         if (transform.position.x > rightBottomCameraBorder.x + (size.x / 2))
             DestroyGameObject();
     }
@@ -33,8 +30,7 @@ public class shootOrange : MonoBehaviour {
     {
         collider.gameObject.AddComponent<Destroy>();
         GameState.Instance.addScorePlayer(1);
-        GameObject gY = Instantiate(Resources.Load("plus"), new Vector3(4, 4, 0), Quaternion.identity) as GameObject;
-            // Shoot destroy 
+        // Shoot destroy 
         Destroy(gameObject);
         ExplosionSound.Instance.TouchButtonSound();
     }

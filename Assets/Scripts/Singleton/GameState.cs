@@ -8,6 +8,7 @@ public class GameState : MonoBehaviour {
     public static GameState Instance;
     private int scorePlayer = 0;
     private int lifePlayer = 5;
+    public GameObject[] respawns;
 
     // Use this for initialization
     void Start () {
@@ -27,8 +28,11 @@ public class GameState : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+        respawns = GameObject.FindGameObjectsWithTag("plus");
         GameObject.FindWithTag("scoreLabel").GetComponent<Text>().text = "" + scorePlayer;
-  
+        //GameObject.FindWithTag("plus").GetComponent<Text>().text = "+1";
+        //GameObject.FindWithTag("plus").AddComponent<fadeOut>();
+
     }
 
     public void addScorePlayer(int toAdd)
