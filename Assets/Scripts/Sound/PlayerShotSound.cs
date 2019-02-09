@@ -10,7 +10,15 @@ public class PlayerShotSound : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        Instance = this;
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance.gameObject);
+        }
+        else if (this != Instance)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     // Update is called once per frame

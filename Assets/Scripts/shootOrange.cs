@@ -18,7 +18,7 @@ public class shootOrange : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        GetComponent<Rigidbody2D>().velocity = new Vector2(30, 0);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
 
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
@@ -31,12 +31,12 @@ public class shootOrange : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-            collider.gameObject.AddComponent<Destroy>();
-            GameState.Instance.addScorePlayer(1);
-            GameObject gY = Instantiate(Resources.Load("plus"), new Vector3(4, 4, 0), Quaternion.identity) as GameObject;
+        collider.gameObject.AddComponent<Destroy>();
+        GameState.Instance.addScorePlayer(1);
+        GameObject gY = Instantiate(Resources.Load("plus"), new Vector3(4, 4, 0), Quaternion.identity) as GameObject;
             // Shoot destroy 
-            Destroy(gameObject);
-            ExplosionSound.Instance.TouchButtonSound();
+        Destroy(gameObject);
+        ExplosionSound.Instance.TouchButtonSound();
     }
 
     void DestroyGameObject()
