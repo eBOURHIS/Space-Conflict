@@ -2,11 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MoveFoe : MonoBehaviour
+public class MoveAsteroid : MonoBehaviour
 {
-
-    public Vector2 speed;
-
     // Use this for initialization
     void Start()
     {
@@ -16,7 +13,7 @@ public class MoveFoe : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        GetComponent<Rigidbody2D>().velocity = new Vector2(-5, 0);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(-5,0);
     }
 
     void OnTriggerEnter2D(Collider2D collider)

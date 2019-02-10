@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 4055118757167128343}
   - component: {fileID: 4571531963560118383}
   - component: {fileID: 8372973556142603929}
-  - component: {fileID: 2041109103840399814}
   - component: {fileID: 9086096815755026428}
   - component: {fileID: 1779020853981843202}
+  - component: {fileID: 2000145059568320704}
   m_Layer: 0
   m_Name: asteroid
   m_TagString: asteroid
@@ -121,19 +121,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2041109103840399814
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5230428367624820358}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db8fe78f581a0c64eba95f2e4fda7bb4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: {x: 0, y: 0}
 --- !u!114 &9086096815755026428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -162,3 +149,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawns: []
+--- !u!114 &2000145059568320704
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5230428367624820358}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6419ea3a154abf54482b40441b9fe184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

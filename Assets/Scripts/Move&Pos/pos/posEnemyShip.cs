@@ -36,7 +36,7 @@ public class posEnemyShip : MonoBehaviour
         if (transform.position.x < leftBottomCameraBorder.x + (size.x / 2))
         {
             DestroyGameObject();
-            if (GameState.Instance.getScorePlayer() > 0)
+            if (GameState.Instance.getScorePlayer() > 1)
             {
                 GameState.Instance.ReduceScorePlayer(2);
                 ExplosionSound.Instance.TouchButtonSound();

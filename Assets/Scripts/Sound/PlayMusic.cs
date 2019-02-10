@@ -8,6 +8,7 @@ public class PlayMusic : MonoBehaviour
     void Start()
     {
         gameMusic.Instance.TouchButtonSound();
+        Debug.Log("début musique");
     }
 
     // Update is called once per frame
