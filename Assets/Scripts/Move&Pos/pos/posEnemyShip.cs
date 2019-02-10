@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class posEnemyShip : MonoBehaviour
 {
@@ -30,10 +31,23 @@ public class posEnemyShip : MonoBehaviour
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
 
-        gameObject.GetComponent<SpriteRenderer>().flipX = true;
+        //gameObject.GetComponent<SpriteRenderer>().flipX = true;
 
         if (transform.position.x < leftBottomCameraBorder.x + (size.x / 2))
+        {
             DestroyGameObject();
+            if (GameState.Instance.getScorePlayer() > 0)
+            {
+                GameState.Instance.ReduceScorePlayer(2);
+                ExplosionSound.Instance.TouchButtonSound();
+
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
+        }
+
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -41,6 +55,15 @@ public class posEnemyShip : MonoBehaviour
         if (collider.name == "ship")
         {
             DestroyGameObject();
+            if (GameState.Instance.getLifePlayer() > 1)
+            {
+                GameState.Instance.RemoveLifePlayer(1);
+            }
+            else
+            {
+                Destroy(gameObject);
+                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            }
             ExplosionSound.Instance.TouchButtonSound();
         }
     }

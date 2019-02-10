@@ -19,7 +19,6 @@ public class gameMusic : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-        //TouchButtonSound();
     }
 
     // Update is called once per frame

@@ -40,6 +40,11 @@ public class GameState : MonoBehaviour {
         scorePlayer += toAdd;
     }
 
+    public void ReduceScorePlayer(int toReduce)
+    {
+        scorePlayer -= toReduce;
+    }
+
     public int getScorePlayer()
     {
         return scorePlayer;

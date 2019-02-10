@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class posAsteroid : MonoBehaviour {
 
@@ -34,6 +35,16 @@ public class posAsteroid : MonoBehaviour {
         if (transform.position.x < leftBottomCameraBorder.x + (size.x / 2))
         {
             DestroyGameObject();
+            if (GameState.Instance.getScorePlayer() > 0)
+            {
+                GameState.Instance.ReduceScorePlayer(1);
+                ExplosionSound.Instance.TouchButtonSound();
+
+            }
+            else
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -42,6 +53,15 @@ public class posAsteroid : MonoBehaviour {
         if (collider.name == "ship")
         {
             DestroyGameObject();
+            if (GameState.Instance.getLifePlayer() > 1)
+            {
+                GameState.Instance.RemoveLifePlayer(1);
+            }
+            else
+            {
+                Destroy(gameObject);
+                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            }
             ExplosionSound.Instance.TouchButtonSound();
         }
     }
