@@ -3,9 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnemyShoot : MonoBehaviour
+public class PosBonus : MonoBehaviour
 {
+
     private Vector3 leftBottomCameraBorder;
+    private Vector3 rightBottomCameraBorder;
+    private Vector3 rightTopCameraBorder;
+    private Vector3 leftTopCameraBorder;
     private Vector2 size;
 
     // Use this for initialization
@@ -13,17 +17,15 @@ public class EnemyShoot : MonoBehaviour
     {
         //Calcul des angles avec conversion du monde de la caméra au mmonde du pixel pour chaque coin
         leftBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 0, 0));
+        rightBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
+        leftTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
+        rightTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        GetComponent<Rigidbody2D>().velocity = new Vector2(-10, 0);
-
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
-
 
         if (transform.position.x < leftBottomCameraBorder.x + (size.x / 2))
         {
@@ -35,15 +37,8 @@ public class EnemyShoot : MonoBehaviour
     {
         if (collider.name == "ship")
         {
-            if (GameState.Instance.getLifePlayer() > 1)
-            {
-                GameState.Instance.RemoveLifePlayer(1);
-            }
-            else
-            {
-                Destroy(gameObject);
-                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
-            }
+            gameObject.GetComponent<PowerUp>().enabled = true;
+            DestroyGameObject();
         }
     }
 
@@ -52,4 +47,6 @@ public class EnemyShoot : MonoBehaviour
         Destroy(gameObject);
     }
 
+
 }
+

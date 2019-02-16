@@ -7,7 +7,6 @@ public class shootAgain : MonoBehaviour {
     private Vector2 size;
     private Vector3 tmppos;
     private float nextShootTime = 0.0f;
-    public float period = 0.5f;
 
     // Use this for initialization
     void Start () {
@@ -27,7 +26,7 @@ public class shootAgain : MonoBehaviour {
 
             if (Time.time > nextShootTime)
             {
-                nextShootTime += period;
+                nextShootTime += 0.3f;
                 //On instantie le tir
                 GameObject gY = Instantiate(Resources.Load("shootOrange"), tmppos, Quaternion.identity) as GameObject;
                 PlayerShotSound.Instance.TouchButtonSound();

@@ -29,7 +29,7 @@ public class GameState : MonoBehaviour {
 	void Update () {
 
         respawns = GameObject.FindGameObjectsWithTag("plus");
-        GameObject.FindWithTag("scoreLabel").GetComponent<Text>().text = "" + scorePlayer;
+        GameObject.FindWithTag("scoreLabel").GetComponent<Text>().text = "Score " + scorePlayer;
         //GameObject.FindWithTag("plus").GetComponent<Text>().text = "+1";
         //GameObject.FindWithTag("plus").AddComponent<fadeOut>();
 

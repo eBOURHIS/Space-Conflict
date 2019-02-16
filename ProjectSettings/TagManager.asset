@@ -14,6 +14,7 @@ TagManager:
   - gainLabel
   - enemy_spaceship
   - plus
+  - powerup
   layers:
   - Default
   - TransparentFX

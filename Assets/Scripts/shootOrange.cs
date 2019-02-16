@@ -28,7 +28,8 @@ public class shootOrange : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        collider.gameObject.AddComponent<Destroy>();
+        //collider destroy
+        Destroy(collider.gameObject);
         GameState.Instance.addScorePlayer(1);
         // Shoot destroy 
         Destroy(gameObject);
