@@ -6,7 +6,7 @@ public class shootAgain : MonoBehaviour {
 
     private Vector2 size;
     private Vector3 tmppos;
-    private float nextShootTime = 0.0f;
+    private float nextShootTime = 0f;
 
     // Use this for initialization
     void Start () {
@@ -19,18 +19,16 @@ public class shootAgain : MonoBehaviour {
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
 
-        if (Input.GetKeyDown("space") || Input.touchCount > 0)
+        if ((Input.GetKeyDown("space") || Input.touchCount > 0) && Time.time > nextShootTime)
         {
             //On get la position du tir en fonction de celle du vaisseau
             tmppos = new Vector3(transform.position.x + (size.x), transform.position.y, transform.position.z);
 
-            if (Time.time > nextShootTime)
-            {
-                nextShootTime += 0.3f;
-                //On instantie le tir
-                GameObject gY = Instantiate(Resources.Load("shootOrange"), tmppos, Quaternion.identity) as GameObject;
-                PlayerShotSound.Instance.TouchButtonSound();
-            }
+            nextShootTime += 0.3f;
+            //On instantie le tir
+            GameObject gY = Instantiate(Resources.Load("shootOrange"), tmppos, Quaternion.identity) as GameObject;
+            PlayerShotSound.Instance.TouchButtonSound();
+            nextShootTime = Time.time + 0.15f;    // whatever time a jump takes
         }
     }
 }

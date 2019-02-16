@@ -12,7 +12,7 @@ public class ShootAgainEnemy : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        InvokeRepeating("SpawnAndShoot", 0, 1f);  //1s delay, repeat every 1s
+        InvokeRepeating("Shoot", 0, 1);  //1s delay, repeat every 1s
     }
 
     // Update is called once per frame
@@ -23,12 +23,13 @@ public class ShootAgainEnemy : MonoBehaviour
         respawns = GameObject.FindGameObjectsWithTag("enemy_spaceship"); 
     }
 
-    void SpawnAndShoot()
+    void Shoot()
     {
         if (respawns.Length > 0)
         {
             foreach (var ship in respawns)
             {
+                // Stockage de la position de chaque vaisseau ennemi à l'écran.
                 enemySpaceShipPos = ship.transform.position;
                 tmppos = new Vector3(enemySpaceShipPos.x, enemySpaceShipPos.y, enemySpaceShipPos.z);
                 //On instantie le tir

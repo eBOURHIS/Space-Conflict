@@ -49,8 +49,8 @@ public class MoveEnemySpaceShip : MonoBehaviour
 
         if (Time.time > nextMove)
         {
-            nextMove += 1;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(-5, Random.Range(-5, 5));
+            nextMove += 2;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(-4, Random.Range(-4, 4));
 
         }
     }

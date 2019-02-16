@@ -7,7 +7,7 @@ public class GameState : MonoBehaviour {
 
     public static GameState Instance;
     private int scorePlayer = 0;
-    private int lifePlayer = 5;
+    private int lifePlayer = 50;
     public GameObject[] respawns;
 
     // Use this for initialization

@@ -35,13 +35,14 @@ public class EnemyShoot : MonoBehaviour
     {
         if (collider.name == "ship")
         {
+            Destroy(gameObject);
+            ExplosionSound.Instance.TouchButtonSound();
             if (GameState.Instance.getLifePlayer() > 1)
             {
                 GameState.Instance.RemoveLifePlayer(1);
             }
             else
             {
-                Destroy(gameObject);
                 SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
             }
         }
