@@ -33,10 +33,7 @@ public class ShootAgainEnemy : MonoBehaviour
             foreach (var ship in respawns)
             {
                 // Stockage de la position de chaque vaisseau ennemi à l'écran.
-                if (ship)
-                {
-                    enemySpaceShipPos = ship.transform.position;
-                }
+                enemySpaceShipPos = ship.transform.position;
                 tmppos = new Vector3(enemySpaceShipPos.x, enemySpaceShipPos.y, enemySpaceShipPos.z);
                 //On instantie le tir
                 PlayerShotSound.Instance.TouchButtonSound();

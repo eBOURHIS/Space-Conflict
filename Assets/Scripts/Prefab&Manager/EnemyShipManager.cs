@@ -27,7 +27,6 @@ public class EnemyShipManager : MonoBehaviour
 
         if (respawns.Length < 2)
         {
-            if (Random.Range(1, 100) == 50 || respawns.Length < 4)
             {
                 tmppos = new Vector3(rightBottomCameraBorder.x + (size.x / 2),
                                      Random.Range(rightBottomCameraBorder.y + (size.y / 2),

@@ -4,37 +4,30 @@ using UnityEngine;
 
 public class BonusManager : MonoBehaviour
 {
-    public GameObject[] respawns;
+    private Vector2 size;
+    private Vector3 tmppos;
     private Vector3 rightBottomCameraBorder;
     private Vector3 rightTopCameraBorder;
-    private Vector3 tmppos;
-    private Vector2 size;
-
 
     // Use this for initialization
     void Start()
     {
         rightBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
         rightTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        InvokeRepeating("Shoot", 0f, Random.Range(15f, 30f));  //0.1s délai, répétition toutes les 15 à 30s
     }
 
     // Update is called once per frame
     void Update()
     {
-        size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
-        size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
-        respawns = GameObject.FindGameObjectsWithTag("powerup");
+    }
 
-        if (respawns.Length < 2)
-        {
-            if (Random.Range(1, 100) == 50 || respawns.Length < 4)
-            {
-                tmppos = new Vector3(rightBottomCameraBorder.x + (size.x / 2),
-                                     Random.Range(rightBottomCameraBorder.y + (size.y / 2),
-                                     (rightTopCameraBorder.y - (size.y / 2))),
-                                     transform.position.z);
-                GameObject gY = Instantiate(Resources.Load("powerup"), tmppos, Quaternion.identity) as GameObject;
-            }
-        }
+    void Shoot()
+    {
+        tmppos = new Vector3(rightBottomCameraBorder.x,
+                             Random.Range(rightBottomCameraBorder.y,
+                             (rightTopCameraBorder.y)),
+                             transform.position.z);
+        GameObject gY = Instantiate(Resources.Load("powerup"), tmppos, Quaternion.identity) as GameObject;
     }
 }

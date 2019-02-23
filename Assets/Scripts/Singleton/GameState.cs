@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour {
 
@@ -32,6 +33,11 @@ public class GameState : MonoBehaviour {
         GameObject.FindWithTag("scoreLabel").GetComponent<Text>().text = "Score " + scorePlayer;
         //GameObject.FindWithTag("plus").GetComponent<Text>().text = "+1";
         //GameObject.FindWithTag("plus").AddComponent<fadeOut>();
+
+        if(getScorePlayer() >= 200)
+        {
+            SceneManager.LoadScene("FinalBoss", LoadSceneMode.Single);
+        }
 
     }
 

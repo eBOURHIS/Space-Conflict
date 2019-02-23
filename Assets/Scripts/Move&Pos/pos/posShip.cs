@@ -46,7 +46,7 @@ public class posShip : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.name == "powerup" && gameObject.GetComponent<shootAgain>().enabled == true)
+        if (collider.name == "powerup(Clone)" && gameObject.GetComponent<shootAgain>().enabled == true)
         {
             Destroy(collider.gameObject);
             gameObject.GetComponent<shootAgain>().enabled = false;

@@ -28,11 +28,15 @@ public class shootOrange : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        //collider destroy
-        Destroy(collider.gameObject);
-        GameState.Instance.addScorePlayer(1);
-        // Shoot destroy 
-        Destroy(gameObject);
-        ExplosionSound.Instance.TouchButtonSound();
+        if (collider.name != "powerup(Clone)")
+        {
+            //collider destroy
+            Destroy(collider.gameObject);
+            GameState.Instance.addScorePlayer(1);
+            // Shoot destroy 
+            Destroy(gameObject);
+            ExplosionSound.Instance.TouchButtonSound();
+        }
+       
     }
 }

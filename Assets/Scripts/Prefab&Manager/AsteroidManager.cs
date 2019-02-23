@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class AsteroidManager : MonoBehaviour
 {
-    public GameObject[] respawns;
+    private GameObject[] respawns;
     private Vector3 rightBottomCameraBorder;
     private Vector3 rightTopCameraBorder;
     private Vector3 tmppos;
@@ -27,7 +27,7 @@ public class AsteroidManager : MonoBehaviour
 
         if (respawns.Length < 10)
         {
-            if (Random.Range(1,1000) == 500 || respawns.Length < 4)
+            if (Random.Range(1,500) == 50 || respawns.Length < 6)
             {
                 tmppos = new Vector3(rightBottomCameraBorder.x + (size.x / 2),
                                     Random.Range(rightBottomCameraBorder.y + (size.y / 2),
