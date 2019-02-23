@@ -17,7 +17,7 @@ public class shootOrange : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        GetComponent<Rigidbody2D>().velocity = new Vector2(10, 0);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(13, 0);
 
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;

@@ -12,7 +12,7 @@ public class ShootAgainEnemy : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        InvokeRepeating("Shoot", 0, 1);  //1s delay, repeat every 1s
+        InvokeRepeating("Shoot", 0, 1.5f);  //0s délai, répétition toutes les 1.5s
     }
 
     // Update is called once per frame
@@ -23,6 +23,9 @@ public class ShootAgainEnemy : MonoBehaviour
         respawns = GameObject.FindGameObjectsWithTag("enemy_spaceship"); 
     }
 
+    /// <summary>
+    /// Récupère la position des vaissaux ennemis à l'écran et les fait tirer toutes les x secondes définies par l'InvokeRepeating.
+    /// </summary>
     void Shoot()
     {
         if (respawns.Length > 0)

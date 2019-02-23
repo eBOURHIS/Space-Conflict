@@ -4,15 +4,34 @@ using UnityEngine;
 
 public class PowerUp : MonoBehaviour
 {
+    private Vector2 size;
+    private Vector3 tmppos;
+    private float desactivate = 10f;
+
     // Start is called before the first frame update
     void Start()
     {
-        Debug.Log("bonus activé");
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
+        size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
+
+        if ((Input.GetKeyDown("space") || Input.touchCount > 0) && Time.time < desactivate)
+        {
+            //On get la position du tir en fonction de celle du vaisseau
+            tmppos = new Vector3(transform.position.x + (size.x), transform.position.y, transform.position.z);
+
+            //On instantie le tir
+            GameObject gY = Instantiate(Resources.Load("power_shoot"), tmppos, Quaternion.identity) as GameObject;
+            PlayerShotSound.Instance.TouchButtonSound();
+        } else if (Time.time > desactivate) 
+        {
+            enabled = false;
+            gameObject.GetComponent<shootAgain>().enabled = true;
+        }
+
     }
 }

@@ -35,16 +35,11 @@ public class posEnemyShip : MonoBehaviour
 
         if (transform.position.x < leftBottomCameraBorder.x + (size.x / 2))
         {
-            DestroyGameObject();
+            Destroy(gameObject);
             if (GameState.Instance.getScorePlayer() > 1)
             {
                 GameState.Instance.ReduceScorePlayer(2);
                 ExplosionSound.Instance.TouchButtonSound();
-
-            }
-            else
-            {
-                Destroy(gameObject);
             }
         }
 
@@ -54,25 +49,18 @@ public class posEnemyShip : MonoBehaviour
     {
         if (collider.name == "ship")
         {
-            DestroyGameObject();
+            Destroy(gameObject);
             if (GameState.Instance.getLifePlayer() > 1)
             {
                 GameState.Instance.RemoveLifePlayer(1);
             }
             else
             {
-                Destroy(gameObject);
+                Destroy(collider.gameObject);
                 SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
             }
             ExplosionSound.Instance.TouchButtonSound();
         }
     }
-
-    void DestroyGameObject()
-    {
-        Destroy(gameObject);
-    }
-
-
 }
 

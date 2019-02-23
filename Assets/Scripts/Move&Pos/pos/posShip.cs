@@ -43,5 +43,16 @@ public class posShip : MonoBehaviour
         if (transform.position.x < leftBottomCameraBorder.x + (size.x / 2))
             transform.position = new Vector3(leftBottomCameraBorder.x + (size.x / 2), transform.position.y, transform.position.z);
     }
+
+    void OnTriggerEnter2D(Collider2D collider)
+    {
+        if (collider.name == "powerup" && gameObject.GetComponent<shootAgain>().enabled == true)
+        {
+            Destroy(collider.gameObject);
+            gameObject.GetComponent<shootAgain>().enabled = false;
+            gameObject.GetComponent<PowerUp>().enabled = true;
+        }
+        
+    }
 }
 
