@@ -10,7 +10,7 @@ public class shootOrange : MonoBehaviour {
     // Use this for initialization
     void Start () {
 
-        //Calcul des angles avec conversion du monde de la caméra au mmonde du pixel pour chaque coin
+        //Calcul des angles avec conversion du monde de la caméra au monde du pixel pour chaque coin
         rightBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
     }
 	
@@ -23,7 +23,7 @@ public class shootOrange : MonoBehaviour {
         size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
 
         if (transform.position.x > rightBottomCameraBorder.x + (size.x / 2))
-            DestroyGameObject();
+            Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -35,10 +35,4 @@ public class shootOrange : MonoBehaviour {
         Destroy(gameObject);
         ExplosionSound.Instance.TouchButtonSound();
     }
-
-    void DestroyGameObject()
-    {
-        Destroy(gameObject);
-    }
-
 }

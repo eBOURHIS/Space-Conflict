@@ -29,7 +29,7 @@ public class PosBonus : MonoBehaviour
 
         if (transform.position.x < leftBottomCameraBorder.x + (size.x / 2))
         {
-            DestroyGameObject();
+            Destroy(gameObject);
         }
     }
 
@@ -37,16 +37,8 @@ public class PosBonus : MonoBehaviour
     {
         if (collider.name == "ship")
         {
-            gameObject.GetComponent<PowerUp>().enabled = true;
-            DestroyGameObject();
+            Destroy(gameObject);
         }
     }
-
-    void DestroyGameObject()
-    {
-        Destroy(gameObject);
-    }
-
-
 }
 

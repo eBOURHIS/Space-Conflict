@@ -12,7 +12,7 @@ public class ShootAgainEnemy : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        InvokeRepeating("Shoot", 0, 1.5f);  //0s délai, répétition toutes les 1.5s
+        InvokeRepeating("Shoot", 0.1f, 1.5f);  //0.1s délai, répétition toutes les 1.5s
     }
 
     // Update is called once per frame
@@ -33,7 +33,10 @@ public class ShootAgainEnemy : MonoBehaviour
             foreach (var ship in respawns)
             {
                 // Stockage de la position de chaque vaisseau ennemi à l'écran.
-                enemySpaceShipPos = ship.transform.position;
+                if (ship)
+                {
+                    enemySpaceShipPos = ship.transform.position;
+                }
                 tmppos = new Vector3(enemySpaceShipPos.x, enemySpaceShipPos.y, enemySpaceShipPos.z);
                 //On instantie le tir
                 PlayerShotSound.Instance.TouchButtonSound();

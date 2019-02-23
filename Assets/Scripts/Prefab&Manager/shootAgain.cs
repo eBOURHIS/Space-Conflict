@@ -10,7 +10,7 @@ public class shootAgain : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
+
 	}
 	
 	// Update is called once per frame
@@ -23,7 +23,6 @@ public class shootAgain : MonoBehaviour {
         {
             //On get la position du tir en fonction de celle du vaisseau
             tmppos = new Vector3(transform.position.x + (size.x), transform.position.y, transform.position.z);
-
             //On instantie le tir
             GameObject gY = Instantiate(Resources.Load("shootOrange"), tmppos, Quaternion.identity) as GameObject;
             PlayerShotSound.Instance.TouchButtonSound();
