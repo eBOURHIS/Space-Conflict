@@ -34,9 +34,9 @@ public class GameState : MonoBehaviour {
         //GameObject.FindWithTag("plus").GetComponent<Text>().text = "+1";
         //GameObject.FindWithTag("plus").AddComponent<fadeOut>();
 
-        if(getScorePlayer() >= 200)
+        if(getScorePlayer() >= 5)
         {
-            SceneManager.LoadScene("FinalBoss", LoadSceneMode.Single);
+            SceneManager.LoadScene("Boss", LoadSceneMode.Single);
         }
 
     }

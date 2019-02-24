@@ -5,8 +5,8 @@ using UnityEngine;
 public class MoveBk : MonoBehaviour
 {
 
-    public Vector2 movement;
-    public Vector2 size;
+    private Vector2 movement;
+    private Vector2 size;
     private float positionRestartX;
     private Vector3 leftBottomCameraBorder;
 

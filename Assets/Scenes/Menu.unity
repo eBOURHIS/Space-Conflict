@@ -319,8 +319,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3607d456ccc1c4d8505b1022a7ba18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {x: -2, y: 0}
-  size: {x: 0, y: 0}
 --- !u!212 &240569722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -435,8 +433,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3607d456ccc1c4d8505b1022a7ba18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {x: -2, y: 0}
-  size: {x: 0, y: 0}
 --- !u!212 &821681164
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -713,8 +709,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3607d456ccc1c4d8505b1022a7ba18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {x: -2, y: 0}
-  size: {x: 0, y: 0}
 --- !u!212 &1190303105
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1270,8 +1264,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d3607d456ccc1c4d8505b1022a7ba18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movement: {x: -2, y: 0}
-  size: {x: 0, y: 0}
 --- !u!212 &1956585050
 SpriteRenderer:
   m_ObjectHideFlags: 0

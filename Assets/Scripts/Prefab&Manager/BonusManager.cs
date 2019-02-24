@@ -14,7 +14,7 @@ public class BonusManager : MonoBehaviour
     {
         rightBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
         rightTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
-        InvokeRepeating("Shoot", 0f, Random.Range(15f, 30f));  //0.1s délai, répétition toutes les 15 à 30s
+        InvokeRepeating("SpawnBonus", 10f, Random.Range(15f, 30f));  //0.1s délai, répétition toutes les 15 à 30s
     }
 
     // Update is called once per frame
@@ -22,7 +22,7 @@ public class BonusManager : MonoBehaviour
     {
     }
 
-    void Shoot()
+    void SpawnBonus()
     {
         tmppos = new Vector3(rightBottomCameraBorder.x,
                              Random.Range(rightBottomCameraBorder.y,
