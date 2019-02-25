@@ -31,13 +31,5 @@ public class PosBonus : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
-    void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.name == "ship")
-        {
-            Destroy(gameObject);
-        }
-    }
 }
 

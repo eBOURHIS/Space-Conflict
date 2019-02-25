@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EnemyShoot : MonoBehaviour
+public class BossShoot : MonoBehaviour
 {
     private Vector3 leftBottomCameraBorder;
     private Vector2 size;
@@ -36,15 +36,9 @@ public class EnemyShoot : MonoBehaviour
         if (collider.name == "ship")
         {
             Destroy(gameObject);
+            Destroy(collider.gameObject);
             ExplosionSound.Instance.TouchButtonSound();
-            if (GameState.Instance.getLifePlayer() > 1)
-            {
-                GameState.Instance.RemoveLifePlayer(1);
-            }
-            else
-            {
-                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
-            }
+            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
         }
     }
 }

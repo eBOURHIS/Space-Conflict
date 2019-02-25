@@ -15,6 +15,7 @@ TagManager:
   - enemy_spaceship
   - plus
   - powerup
+  - boss_shoot
   layers:
   - Default
   - TransparentFX

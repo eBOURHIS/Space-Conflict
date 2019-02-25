@@ -24,10 +24,11 @@ public class BonusManager : MonoBehaviour
 
     void SpawnBonus()
     {
-        tmppos = new Vector3(rightBottomCameraBorder.x,
-                             Random.Range(rightBottomCameraBorder.y,
-                             (rightTopCameraBorder.y)),
-                             transform.position.z);
+        tmppos = new Vector3(rightBottomCameraBorder.x + (size.x / 2),
+                             Random.Range(rightBottomCameraBorder.y + (size.y / 2),
+                             (rightTopCameraBorder.y - (size.y / 2))),
+                              transform.position.z);
+
         GameObject gY = Instantiate(Resources.Load("powerup"), tmppos, Quaternion.identity) as GameObject;
     }
 }

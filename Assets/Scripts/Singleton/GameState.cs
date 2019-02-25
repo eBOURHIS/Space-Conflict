@@ -37,6 +37,7 @@ public class GameState : MonoBehaviour {
         if(getScorePlayer() >= 5)
         {
             SceneManager.LoadScene("Boss", LoadSceneMode.Single);
+            ReduceScorePlayer(100);
         }
 
     }

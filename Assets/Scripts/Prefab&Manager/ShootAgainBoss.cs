@@ -12,7 +12,7 @@ public class ShootAgainBoss : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        InvokeRepeating("Shoot", 0.1f, 1.5f);  //0.1s délai, répétition toutes les 1.5s
+        InvokeRepeating("Shoot", 5f, 5f);  //0.1s délai, répétition toutes les 1.5s
     }
 
     // Update is called once per frame
@@ -31,6 +31,6 @@ public class ShootAgainBoss : MonoBehaviour
                 tmppos = new Vector3(transform.position.x - (size.x / 2), transform.position.y, transform.position.z);
                 //On instantie le tir
                 PlayerShotSound.Instance.TouchButtonSound();
-                GameObject gY = Instantiate(Resources.Load("enemy_shoot"), tmppos, Quaternion.identity) as GameObject;
+                GameObject gY = Instantiate(Resources.Load("boss_shoot"), tmppos, Quaternion.identity) as GameObject;
     }
 }
