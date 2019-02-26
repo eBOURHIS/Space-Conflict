@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class MoveBoss : MonoBehaviour
 {
-    private float nextMove = 5.0f;
+    private float nextMove = 0.0f;
     private Vector2 size;
     private Vector3 leftBottomCameraBorder;
     private Vector3 rightBottomCameraBorder;
@@ -47,8 +47,8 @@ public class MoveBoss : MonoBehaviour
 
         if (Time.time > nextMove)
         {
-            nextMove += 5;
-            GetComponent<Rigidbody2D>().velocity = new Vector2(0, Random.Range(-1, 1));
+            nextMove += 1;
+            GetComponent<Rigidbody2D>().velocity = new Vector2(0, Random.Range(-4, 4));
         }
     }
 }

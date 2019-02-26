@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class VieBoss : MonoBehaviour
 {
-    private int life = 50;
+    private int life = 51;
 
     // Start is called before the first frame update
     void Start()
@@ -28,13 +28,12 @@ public class VieBoss : MonoBehaviour
             if (life > 1)
             {
                 life -= 1;
-                Debug.Log(life);
                 ExplosionSound.Instance.TouchButtonSound();
-            } else if (life == 0)
+            } else if (life == 1)
             {
                 Destroy(gameObject);
                 ExplosionSound.Instance.TouchButtonSound();
-                SceneManager.LoadScene("Menu", LoadSceneMode.Single);
+                SceneManager.LoadScene("Victory", LoadSceneMode.Single);
             }
            
 

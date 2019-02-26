@@ -12,7 +12,7 @@ public class ShootAgainBoss : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        InvokeRepeating("Shoot", 5f, 5f);  //0.1s délai, répétition toutes les 1.5s
+        InvokeRepeating("Shoot", 5f, 1f);  //0.1s délai, répétition toutes les 1.5s
     }
 
     // Update is called once per frame
