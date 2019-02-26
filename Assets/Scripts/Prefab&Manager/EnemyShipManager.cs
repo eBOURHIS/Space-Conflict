@@ -16,6 +16,7 @@ public class EnemyShipManager : MonoBehaviour
     {
         rightBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
         rightTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
+        InvokeRepeating("Spawn", 5f, Random.Range(2, 10));
     }
 
     // Update is called once per frame
@@ -24,16 +25,21 @@ public class EnemyShipManager : MonoBehaviour
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
         respawns = GameObject.FindGameObjectsWithTag("enemy_spaceship");
+    }
 
-        if (respawns.Length < 2)
-        {
-            {
-                tmppos = new Vector3(rightBottomCameraBorder.x + (size.x / 2),
+    void Spawn()
+    {
+        tmppos = new Vector3(rightBottomCameraBorder.x + (size.x / 2),
                                      Random.Range(rightBottomCameraBorder.y + (size.y / 2),
                                      (rightTopCameraBorder.y - (size.y / 2))),
                                      transform.position.z);
-                GameObject gY = Instantiate(Resources.Load("enemy_spaceship"), tmppos, Quaternion.identity) as GameObject;
-            }
+        if (Random.Range(1, 10) < 6)
+        {
+            GameObject gY = Instantiate(Resources.Load("enemy_spaceship"), tmppos, Quaternion.identity) as GameObject;
+        } else
+        {
+            GameObject gY = Instantiate(Resources.Load("enemy_spaceship"), tmppos, Quaternion.identity) as GameObject;
+            GameObject gX = Instantiate(Resources.Load("enemy_spaceship"), tmppos, Quaternion.identity) as GameObject;
         }
     }
 }

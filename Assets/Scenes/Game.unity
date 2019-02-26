@@ -370,6 +370,7 @@ GameObject:
   - component: {fileID: 443583872}
   - component: {fileID: 443583870}
   - component: {fileID: 443583871}
+  - component: {fileID: 443583873}
   m_Layer: 0
   m_Name: ship
   m_TagString: Untagged
@@ -566,6 +567,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10fdca941436945428f05feb80c1fd06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &443583873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 443583862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d68f11c3bc4c1e04984a00344202d96a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  respawns: []
 --- !u!1 &499103347
 GameObject:
   m_ObjectHideFlags: 0
@@ -2073,12 +2087,12 @@ PrefabInstance:
     - target: {fileID: 4331071513535363756, guid: 09f4ec031b8fbfb4f898341f4f404ec4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.28
+      value: -10.13
       objectReference: {fileID: 0}
     - target: {fileID: 4331071513535363756, guid: 09f4ec031b8fbfb4f898341f4f404ec4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.42
+      value: 2.52
       objectReference: {fileID: 0}
     - target: {fileID: 4331071513535363756, guid: 09f4ec031b8fbfb4f898341f4f404ec4,
         type: 3}
