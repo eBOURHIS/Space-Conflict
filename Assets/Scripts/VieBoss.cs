@@ -10,7 +10,6 @@ public class VieBoss : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
@@ -21,6 +20,8 @@ public class VieBoss : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
+        Color cl = GetComponent<SpriteRenderer>().color;
+
         if (collider.name == "shootOrange(Clone)")
         {
             Destroy(collider.gameObject);
@@ -28,6 +29,10 @@ public class VieBoss : MonoBehaviour
             if (life > 1)
             {
                 life -= 1;
+                
+                cl.g -= 0.02f;
+                cl.b -= 0.02f;
+                GetComponent<SpriteRenderer>().color = cl;
                 ExplosionSound.Instance.TouchButtonSound();
             } else if (life == 1)
             {

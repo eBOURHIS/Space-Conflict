@@ -28,7 +28,7 @@ public class shootOrange : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.name != "powerup(Clone)" && collider.name != "boss" && collider.name != "boss_shoot")
+        if (collider.name != "powerup(Clone)" && collider.name != "boss" && collider.name != "boss_shoot(Clone)")
         {
             //collider destroy
             Destroy(collider.gameObject);
