@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour {
 
     public static GameState Instance;
     private int scorePlayer = 0;
-    private int lifePlayer = 50;
+    private int lifePlayer = 10;
     public GameObject[] respawns;
 
     // Use this for initialization
@@ -29,16 +28,7 @@ public class GameState : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        respawns = GameObject.FindGameObjectsWithTag("plus");
         GameObject.FindWithTag("scoreLabel").GetComponent<Text>().text = "Score " + scorePlayer;
-        //GameObject.FindWithTag("plus").GetComponent<Text>().text = "+1";
-        //GameObject.FindWithTag("plus").AddComponent<fadeOut>();
-
-        if(getScorePlayer() >= 5)
-        {
-            SceneManager.LoadScene("Boss", LoadSceneMode.Single);
-            ReduceScorePlayer(100);
-        }
 
     }
 
