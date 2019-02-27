@@ -48,8 +48,8 @@ public class posShip : MonoBehaviour
     {
         if (collider.name == "powerup(Clone)")
         {
-            gameObject.GetComponent<shootAgain>().enabled = false;
-            gameObject.GetComponent<PowerUp>().enabled = true;
+            GetComponent<shootAgain>().enabled = false;
+            gameObject.AddComponent<PowerUp>();
             Destroy(collider.gameObject);
         }
 

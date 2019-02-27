@@ -6,10 +6,12 @@ using UnityEngine.SceneManagement;
 public class VieBoss : MonoBehaviour
 {
     private int life = 51;
+    private Color cl;
 
     // Start is called before the first frame update
     void Start()
     {
+        cl = GetComponent<SpriteRenderer>().color;
     }
 
     // Update is called once per frame
@@ -20,16 +22,14 @@ public class VieBoss : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        Color cl = GetComponent<SpriteRenderer>().color;
 
-        if (collider.name == "shootOrange(Clone)")
+        if (collider.name == "shootOrange(Clone)" || collider.name == "power_shoot(Clone)")
         {
             Destroy(collider.gameObject);
 
             if (life > 1)
             {
                 life -= 1;
-                
                 cl.g -= 0.02f;
                 cl.b -= 0.02f;
                 GetComponent<SpriteRenderer>().color = cl;
