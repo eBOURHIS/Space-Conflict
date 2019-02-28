@@ -36,9 +36,16 @@ public class BossShoot : MonoBehaviour
         if (collider.name == "ship")
         {
             Destroy(gameObject);
-            Destroy(collider.gameObject);
             ExplosionSound.Instance.TouchButtonSound();
-            SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            if (GameState.Instance.getLifePlayer() > 5)
+            {
+                GameState.Instance.RemoveLifePlayer(5);
+            }
+            else
+            {
+                Destroy(collider.gameObject);
+                SceneManager.LoadScene("GameOver", LoadSceneMode.Single);
+            }
         }
     }
 }

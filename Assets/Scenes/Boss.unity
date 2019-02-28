@@ -603,7 +603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 822022636}
   m_Layer: 0
-  m_Name: 05 - Ship
+  m_Name: 04 - Ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -625,7 +625,7 @@ Transform:
   - {fileID: 583112479}
   - {fileID: 1807562199}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &905448887
 GameObject:
@@ -1070,6 +1070,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawns: []
+  HealthBar: {fileID: 0}
 --- !u!81 &1213165589
 AudioListener:
   m_ObjectHideFlags: 0
@@ -1977,7 +1978,7 @@ RectTransform:
   - {fileID: 1652475197}
   - {fileID: 1222210516}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}

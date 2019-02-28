@@ -34,7 +34,7 @@ public class ShootAgainEnemy : MonoBehaviour
             {
                 // Stockage de la position de chaque vaisseau ennemi à l'écran.
                 enemySpaceShipPos = ship.transform.position;
-                tmppos = new Vector3(enemySpaceShipPos.x, enemySpaceShipPos.y, enemySpaceShipPos.z);
+                tmppos = new Vector3(enemySpaceShipPos.x - (size.x / 2), enemySpaceShipPos.y, enemySpaceShipPos.z);
                 //On instantie le tir
                 PlayerShotSound.Instance.TouchButtonSound();
                 GameObject gY = Instantiate(Resources.Load("enemy_shoot"), tmppos, Quaternion.identity) as GameObject;
