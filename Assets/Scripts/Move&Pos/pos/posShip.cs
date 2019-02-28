@@ -21,6 +21,7 @@ public class posShip : MonoBehaviour
         leftTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(0, 1, 0));
         rightTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
     }
+
     void Update()
     {
            size = new Vector2(

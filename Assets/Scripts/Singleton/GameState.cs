@@ -10,6 +10,8 @@ public class GameState : MonoBehaviour {
     private int lifePlayer = 10;
     public GameObject[] respawns;
 
+    public SimpleHealthBar HealthBar;
+
     // Use this for initialization
     void Start () {
 
@@ -23,13 +25,12 @@ public class GameState : MonoBehaviour {
             Debug.Log("Détruit");
             Destroy(this.gameObject);
         }
-	}
-	
-	// Update is called once per frame
-	void Update () {
+    }
+
+    // Update is called once per frame
+    void Update () {
 
         GameObject.FindWithTag("scoreLabel").GetComponent<Text>().text = "Score " + scorePlayer;
-
     }
 
     public void addScorePlayer(int toAdd)
@@ -47,9 +48,11 @@ public class GameState : MonoBehaviour {
         return scorePlayer;
     }
 
-    public void RemoveLifePlayer(int toRemove)
+    public void RemoveLifePlayer(int damage)
     {
-        lifePlayer -= toRemove;
+        HealthBar = FindObjectOfType<SimpleHealthBar>();
+        lifePlayer -= damage;
+        HealthBar.UpdateBar(lifePlayer, 10);
     }
 
     public int getLifePlayer()

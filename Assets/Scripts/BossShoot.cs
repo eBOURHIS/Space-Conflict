@@ -19,7 +19,7 @@ public class BossShoot : MonoBehaviour
     void Update()
     {
 
-        GetComponent<Rigidbody2D>().velocity = new Vector2(-10, 0);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(-10, Random.Range(-5,5));
 
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
