@@ -26,7 +26,7 @@ public class shootAgain : MonoBehaviour {
             //On instantie le tir
             GameObject gY = Instantiate(Resources.Load("shootOrange"), tmppos, Quaternion.identity) as GameObject;
             PlayerShotSound.Instance.TouchButtonSound();
-            nextShootTime = Time.time + 0.2f;    // temps entre chaque tir pour éviter de le spammer
+            nextShootTime = Time.time + 0.25f;    // temps entre chaque tir pour éviter de le spammer
         }
     }
 }

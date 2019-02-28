@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 4331071513535363753}
   - component: {fileID: 4331071513535363758}
   - component: {fileID: 4331071513535363759}
-  - component: {fileID: 5580088503480730294}
   - component: {fileID: 147317623844054916}
   m_Layer: 0
   m_Name: enemy_spaceship
@@ -98,7 +97,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.014961839, y: -0.00000014901161}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +108,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.27, y: 0.61}
+  m_Size: {x: 1.7038786, y: 1.0586042}
   m_EdgeRadius: 0
 --- !u!50 &4331071513535363753
 Rigidbody2D:
@@ -158,19 +157,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: db8fe78f581a0c64eba95f2e4fda7bb4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &5580088503480730294
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4331071513535363757}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d68f11c3bc4c1e04984a00344202d96a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawns: []
 --- !u!114 &147317623844054916
 MonoBehaviour:
   m_ObjectHideFlags: 0
