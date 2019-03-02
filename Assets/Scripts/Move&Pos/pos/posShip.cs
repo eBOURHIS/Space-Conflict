@@ -49,6 +49,7 @@ public class posShip : MonoBehaviour
     {
         if (collider.name == "powerup(Clone)")
         {
+            BonusSound.Instance.TouchButtonSound();
             GetComponent<shootAgain>().enabled = false;
             gameObject.AddComponent<PowerUp>();
             Destroy(collider.gameObject);

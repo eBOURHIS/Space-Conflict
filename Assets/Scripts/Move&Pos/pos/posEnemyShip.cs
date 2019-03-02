@@ -25,24 +25,20 @@ public class posEnemyShip : MonoBehaviour
         rightTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
     }
 
-
     void Update()
     {
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
-
-        //gameObject.GetComponent<SpriteRenderer>().flipX = true;
 
         if (transform.position.x < leftBottomCameraBorder.x + (size.x / 2))
         {
             Destroy(gameObject);
             if (GameState.Instance.getScorePlayer() > 1)
             {
-                GameState.Instance.ReduceScorePlayer(2);
+                GameState.Instance.ReduceScorePlayer(1);
                 ExplosionSound.Instance.TouchButtonSound();
             }
         }
-
     }
 
     void OnTriggerEnter2D(Collider2D collider)
@@ -63,4 +59,3 @@ public class posEnemyShip : MonoBehaviour
         }
     }
 }
-

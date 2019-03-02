@@ -37,7 +37,7 @@ public class BossShoot : MonoBehaviour
         {
             Destroy(gameObject);
             ExplosionSound.Instance.TouchButtonSound();
-            if (GameState.Instance.getLifePlayer() > 5)
+            if (GameState.Instance.getLifePlayer() >= 5)
             {
                 GameState.Instance.RemoveLifePlayer(5);
             }

@@ -16,8 +16,12 @@ public class PosHealthBar : MonoBehaviour
     void Update()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        pos = new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z);
-        transform.position = pos;
+        if (player)
+        {
+            pos = new Vector3(player.transform.position.x, player.transform.position.y + 1, player.transform.position.z);
+            transform.position = pos;
+        }
+        
 
     }
 }

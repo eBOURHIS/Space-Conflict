@@ -979,11 +979,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1213165590}
   - component: {fileID: 1213165584}
-  - component: {fileID: 1213165589}
-  - component: {fileID: 1213165588}
-  - component: {fileID: 1213165587}
-  - component: {fileID: 1213165586}
-  - component: {fileID: 1213165585}
   m_Layer: 0
   m_Name: 00 - Main Camera
   m_TagString: MainCamera
@@ -1033,66 +1028,6 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!114 &1213165585
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213165583}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 44f0054169ba1dd4a83de9e87685030d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1213165586
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213165583}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc593dfda51955478b31e6bc4bffbc9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  explosionSound: {fileID: 8300000, guid: b24f556bf0efa81489a3166834558c69, type: 3}
---- !u!114 &1213165587
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213165583}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 619eb5cf546c72245af1189dcff50212, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playerShotSound: {fileID: 8300000, guid: 63b945fc898bfc04f8ef46ac31c5359e, type: 3}
---- !u!114 &1213165588
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213165583}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1d4f52b72140c8a4d8bfe4fe71deebe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  respawns: []
-  HealthBar: {fileID: 0}
---- !u!81 &1213165589
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1213165583}
-  m_Enabled: 0
 --- !u!4 &1213165590
 Transform:
   m_ObjectHideFlags: 0

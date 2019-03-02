@@ -30,7 +30,7 @@ public class ShootAgainBoss : MonoBehaviour
                 // Stockage de la position de chaque vaisseau ennemi à l'écran.
                 tmppos = new Vector3(transform.position.x - (size.x / 2), transform.position.y, transform.position.z);
                 //On instantie le tir
-                PlayerShotSound.Instance.TouchButtonSound();
+                BossShootSound.Instance.TouchButtonSound();
                 GameObject gY = Instantiate(Resources.Load("boss_shoot"), tmppos, Quaternion.identity) as GameObject;
     }
 }
