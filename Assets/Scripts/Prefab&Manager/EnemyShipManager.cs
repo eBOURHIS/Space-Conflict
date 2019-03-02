@@ -18,7 +18,7 @@ public class EnemyShipManager : MonoBehaviour
     {
         rightBottomCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 0, 0));
         rightTopCameraBorder = Camera.main.ViewportToWorldPoint(new Vector3(1, 1, 0));
-        InvokeRepeating("Spawn", 5f, Random.Range(5, 15));
+        InvokeRepeating("Spawn", 5f, Random.Range(5, 10));
     }
 
     // Update is called once per frame

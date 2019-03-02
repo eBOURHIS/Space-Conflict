@@ -33,6 +33,7 @@ public class GameState : MonoBehaviour {
     void Update () {
 
         GameObject.FindWithTag("scoreLabel").GetComponent<Text>().text = "Score " + scorePlayer;
+        HealthBar = FindObjectOfType<SimpleHealthBar>();
 
         //Reset du score et de la vie à chaque début de partie.
         CurrentScene = SceneManager.GetActiveScene();
@@ -60,14 +61,12 @@ public class GameState : MonoBehaviour {
 
     public void RemoveLifePlayer(int damage)
     {
-        HealthBar = FindObjectOfType<SimpleHealthBar>();
         lifePlayer -= damage;
         HealthBar.UpdateBar(lifePlayer, 10);
     }
 
     public void UpdateHealthBar()
     {
-        HealthBar = FindObjectOfType<SimpleHealthBar>();
         HealthBar.UpdateBar(lifePlayer, 10);
     }
 
@@ -78,7 +77,6 @@ public class GameState : MonoBehaviour {
 
     public void AddLifePlayer(int toAdd)
     {
-        HealthBar = FindObjectOfType<SimpleHealthBar>();
         lifePlayer += toAdd;
         HealthBar.UpdateBar(lifePlayer, 10);
     }

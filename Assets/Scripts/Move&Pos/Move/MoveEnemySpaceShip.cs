@@ -45,7 +45,7 @@ public class MoveEnemySpaceShip : MonoBehaviour
 
         //Left of the screen
         if (transform.position.x < leftBottomCameraBorder.x + (size.x / 2))
-            transform.position = new Vector3(leftBottomCameraBorder.x + (size.x / 2), transform.position.y, transform.position.z);
+            Destroy(gameObject);
 
         if (Time.time > nextMove)
         {

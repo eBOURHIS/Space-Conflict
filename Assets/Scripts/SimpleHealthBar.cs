@@ -6,11 +6,9 @@ using UnityEngine.UI;
 [ExecuteInEditMode]
 [AddComponentMenu( "UI/Simple Health Bar/Simple Health Bar" )]
 public class SimpleHealthBar : MonoBehaviour
-{
-    public static SimpleHealthBar Instance;
-
-    // COLOR OPTIONS //
-    public Image barImage;
+{	
+	// COLOR OPTIONS //
+	public Image barImage;
 	public enum ColorMode
 	{
 		Single,
