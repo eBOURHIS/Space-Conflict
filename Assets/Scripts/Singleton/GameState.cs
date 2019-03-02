@@ -67,6 +67,7 @@ public class GameState : MonoBehaviour {
 
     public void UpdateHealthBar()
     {
+        HealthBar = FindObjectOfType<SimpleHealthBar>();
         HealthBar.UpdateBar(lifePlayer, 10);
     }
 
@@ -77,6 +78,7 @@ public class GameState : MonoBehaviour {
 
     public void AddLifePlayer(int toAdd)
     {
+        HealthBar = FindObjectOfType<SimpleHealthBar>();
         lifePlayer += toAdd;
         HealthBar.UpdateBar(lifePlayer, 10);
     }
