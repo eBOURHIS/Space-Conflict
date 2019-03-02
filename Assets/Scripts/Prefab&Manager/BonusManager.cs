@@ -28,13 +28,14 @@ public class BonusManager : MonoBehaviour
                              Random.Range(rightBottomCameraBorder.y + (size.y / 2),
                              (rightTopCameraBorder.y - (size.y / 2))),
                               transform.position.z);
-
-        if (Random.Range(1,2) == 1)
+        int i = Random.Range(1, 10);
+        Debug.Log(i);
+        if (i < 8)
         {
             GameObject gY = Instantiate(Resources.Load("healthBonus"), tmppos, Quaternion.identity) as GameObject;
-        } else if (Random.Range(1, 2) == 2)
+        } else
         {
-            GameObject gY = Instantiate(Resources.Load("healthBonus"), tmppos, Quaternion.identity) as GameObject;
+            GameObject gY = Instantiate(Resources.Load("powerup"), tmppos, Quaternion.identity) as GameObject;
         }
 
 
