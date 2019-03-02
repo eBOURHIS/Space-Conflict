@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameState : MonoBehaviour {
 
@@ -11,6 +12,7 @@ public class GameState : MonoBehaviour {
     public GameObject[] respawns;
 
     public SimpleHealthBar HealthBar;
+    private Scene CurrentScene;
 
     // Use this for initialization
     void Start () {
@@ -31,6 +33,14 @@ public class GameState : MonoBehaviour {
     void Update () {
 
         GameObject.FindWithTag("scoreLabel").GetComponent<Text>().text = "Score " + scorePlayer;
+
+        //Reset du score et de la vie à chaque début de partie.
+        CurrentScene = SceneManager.GetActiveScene();
+        if (CurrentScene.name == "Menu")
+        {
+            lifePlayer = 10;
+            scorePlayer = 0;
+        }
     }
 
     public void addScorePlayer(int toAdd)
@@ -52,6 +62,11 @@ public class GameState : MonoBehaviour {
     {
         HealthBar = FindObjectOfType<SimpleHealthBar>();
         lifePlayer -= damage;
+        HealthBar.UpdateBar(lifePlayer, 10);
+    }
+
+    public void UpdateHealthBar()
+    {
         HealthBar.UpdateBar(lifePlayer, 10);
     }
 

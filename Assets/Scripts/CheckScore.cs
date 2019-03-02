@@ -15,7 +15,7 @@ public class CheckScore : MonoBehaviour
     void Update()
     {
 
-        if (GameState.Instance.getScorePlayer() >= 100)
+        if (GameState.Instance.getScorePlayer() >= 1)
         {
             SceneManager.LoadScene("Boss", LoadSceneMode.Single);
             Destroy(this);
