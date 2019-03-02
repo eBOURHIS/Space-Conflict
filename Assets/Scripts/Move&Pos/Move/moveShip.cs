@@ -5,11 +5,13 @@ using UnityEngine;
 public class moveShip : MonoBehaviour {
 
     //1 - La vitesse de déplacement
-    public Vector2 speed;
+    private Vector2 speed;
     private Vector2 movement;
 
     // Use this for initialization
     void Start () {
+
+        speed = new Vector2(15, 15);
 
     }
 

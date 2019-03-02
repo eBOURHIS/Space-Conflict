@@ -29,6 +29,14 @@ public class BonusManager : MonoBehaviour
                              (rightTopCameraBorder.y - (size.y / 2))),
                               transform.position.z);
 
-        GameObject gY = Instantiate(Resources.Load("powerup"), tmppos, Quaternion.identity) as GameObject;
+        if (Random.Range(1,2) == 1)
+        {
+            GameObject gY = Instantiate(Resources.Load("healthBonus"), tmppos, Quaternion.identity) as GameObject;
+        } else if (Random.Range(1, 2) == 2)
+        {
+            GameObject gY = Instantiate(Resources.Load("healthBonus"), tmppos, Quaternion.identity) as GameObject;
+        }
+
+
     }
 }

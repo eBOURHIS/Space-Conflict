@@ -55,6 +55,22 @@ public class posShip : MonoBehaviour
             Destroy(collider.gameObject);
         }
 
+        if (collider.name == "healthBonus(Clone)")
+        {
+            if (GameState.Instance.getLifePlayer() < 10)
+            {
+                GameState.Instance.AddLifePlayer(1);
+                BonusSound.Instance.TouchButtonSound();
+                Destroy(collider.gameObject);
+            }
+            else
+            {
+                GameState.Instance.addScorePlayer(5);
+                BonusSound.Instance.TouchButtonSound();
+                Destroy(collider.gameObject);
+            }
+        }
+
     }
 }
 

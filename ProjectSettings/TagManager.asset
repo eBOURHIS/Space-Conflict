@@ -5,17 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - asteroid
-  - life1
-  - life2
-  - life3
-  - life4
-  - life5
   - scoreLabel
   - gainLabel
   - enemy_spaceship
   - plus
   - powerup
   - boss_shoot
+  - lifeBonus
   layers:
   - Default
   - TransparentFX

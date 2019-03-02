@@ -17,7 +17,7 @@ public class shootOrange : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        GetComponent<Rigidbody2D>().velocity = new Vector2(13, 0);
+        GetComponent<Rigidbody2D>().velocity = new Vector2(16, 0);
 
         size.x = gameObject.GetComponent<SpriteRenderer>().bounds.size.x;
         size.y = gameObject.GetComponent<SpriteRenderer>().bounds.size.y;
@@ -28,14 +28,16 @@ public class shootOrange : MonoBehaviour {
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.name != "powerup(Clone)" && collider.name != "boss" && collider.name != "boss_shoot(Clone)")
+        if (collider.name != "powerup(Clone)" && collider.name != "healthBonus(Clone)" && collider.name != "boss" && collider.name != "boss_shoot(Clone)")
         {
             //collider destroy
             Destroy(collider.gameObject);
+            ExplosionSound.Instance.TouchButtonSound();
+
             GameState.Instance.addScorePlayer(1);
+
             // Shoot destroy 
             Destroy(gameObject);
-            ExplosionSound.Instance.TouchButtonSound();
         }
        
     }

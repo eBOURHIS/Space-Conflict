@@ -74,4 +74,10 @@ public class GameState : MonoBehaviour {
     {
         return lifePlayer;
     }
+
+    public void AddLifePlayer(int toAdd)
+    {
+        lifePlayer += toAdd;
+        HealthBar.UpdateBar(lifePlayer, 10);
+    }
 }
