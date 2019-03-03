@@ -12,7 +12,7 @@ Le jeu est relativement difficile mais loin d'être impossible. (Testé à de no
 
 ## Téléchargement
 
-- Le jeu est disponible en téléchargement [ici](https://gitlab.com/eBOURHIS29/space-shooter-unity/tags).
+- Le jeu est disponible en téléchargement [ici](https://github.com/eBOURHIS/Space-Conflict/releases).
 
 ## Cible
 
