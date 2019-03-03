@@ -59,7 +59,7 @@ public class posShip : MonoBehaviour
         {
             if (GameState.Instance.getLifePlayer() < 10)
             {
-                GameState.Instance.AddLifePlayer(Random.Range(1,2));
+                GameState.Instance.AddLifePlayer(3);
                 BonusSound.Instance.TouchButtonSound();
                 Destroy(collider.gameObject);
             }

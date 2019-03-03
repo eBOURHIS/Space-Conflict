@@ -12,6 +12,7 @@ TagManager:
   - powerup
   - boss_shoot
   - lifeBonus
+  - BestScoreLabel
   layers:
   - Default
   - TransparentFX

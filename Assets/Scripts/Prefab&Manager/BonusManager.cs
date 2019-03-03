@@ -30,7 +30,7 @@ public class BonusManager : MonoBehaviour
                               transform.position.z);
         int i = Random.Range(1, 10);
         Debug.Log(i);
-        if (i < 8)
+        if (i < 6)
         {
             GameObject gY = Instantiate(Resources.Load("healthBonus"), tmppos, Quaternion.identity) as GameObject;
         } else

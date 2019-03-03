@@ -5,8 +5,9 @@ TextureImporter:
     21300000: buttonPlay
     21300002: buttonAlien
     21300004: replay
+    21300006: button_exit
   externalObjects: {}
-  serializedVersion: 7
+  serializedVersion: 9
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -157,13 +158,33 @@ TextureImporter:
         width: 102
         height: 101
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
       spriteID: 0c90dabc41ce5e44781d7cfcf25d421e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: button_exit
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 77
+        width: 101
+        height: 101
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3cd92e13937bf74781e793ad7f1cdda
       vertices: []
       indices: 
       edges: []

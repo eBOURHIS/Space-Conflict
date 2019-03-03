@@ -35,6 +35,7 @@ Le jeu est relativement difficile mais loin d'être impossible. (Testé à de no
 - Problèmes de modification d'un gameObject mais pas de son prefab ce qui fait que le script ne se déclenche qu'en présence du gameObject d'origine et non de ses clones.
 - Des problèmes rencontrés qu'après avoir build le jeu, comme la bar de vie qui fonctionnait dans l'éditeur mais pas après le build.
 - Une fois l'écran de gameOver/Victoire atteint, relancer une partie sans quitter le jeu ne fonctionnait pas car les points de vie et le score restait ceux de l'ancienne partie.
+- Sauvegarder le score.
 
 ## Solutions
 

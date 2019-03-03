@@ -8,6 +8,7 @@ public class GameState : MonoBehaviour {
 
     public static GameState Instance;
     private int scorePlayer = 0;
+    private int BestScorePlayer = 0;
     private int lifePlayer = 10;
     public GameObject[] respawns;
 
@@ -32,13 +33,22 @@ public class GameState : MonoBehaviour {
     // Update is called once per frame
     void Update () {
 
-        GameObject.FindWithTag("scoreLabel").GetComponent<Text>().text = "Score " + scorePlayer;
+        GameObject.FindWithTag("scoreLabel").GetComponent<Text>().text = "Score " + scorePlayer + "/100";
+       
         HealthBar = FindObjectOfType<SimpleHealthBar>();
 
         //Reset du score et de la vie à chaque début de partie.
         CurrentScene = SceneManager.GetActiveScene();
         if (CurrentScene.name == "Menu")
         {
+            if (scorePlayer > BestScorePlayer)
+            {
+                BestScorePlayer = scorePlayer;
+                GameObject.FindWithTag("BestScoreLabel").GetComponent<Text>().text = "Best " + BestScorePlayer;
+            } else
+            {
+                GameObject.FindWithTag("BestScoreLabel").GetComponent<Text>().text = "Best " + BestScorePlayer;
+            }
             lifePlayer = 10;
             scorePlayer = 0;
         }
