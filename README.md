@@ -8,7 +8,8 @@ difficulté augmentera légèrement. Une fois le boss vaincu, vous avez gagné l
 
 Il y a deux sortes de bonus, le powerup (éclair) qui augmente la cadence de vos tirs et le coeur qui vous redonne de la vie ou du score si votre vie est déjà pleine.
 
-Le jeu est relativement difficile mais loin d'être impossible. (Testé à de nombreuses reprises.)
+Le jeu est relativement difficile et peu nécessiter plusieurs tentative. (Testé à de nombreuses reprises par moi et deux autres personne)
+Le jeu a été testé sur un PC avec une résolution de 1920x1080.
 
 ## Téléchargement
 
