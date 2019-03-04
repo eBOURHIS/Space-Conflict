@@ -2,13 +2,13 @@
 
 ## Règles du jeu
 
-Ce jeu est un space shooter composé de deux écrans. Dans le premier, vous devez éviter les asteroids et les tirs des vaisseaux ennemis tout en les empêchant d'atteindre 
+Ce jeu est un space shooter composé de deux écrans. Dans le premier, vous devez éviter les astéroïdes et les tirs des vaisseaux ennemis tout en les empêchant d'atteindre 
 la bordure gauche de l'écran ce qui vous fera perdre des points. A contrario, détruire des ennemis rapporte des points. Une fois à 100 points, vous pouvez affronter le boss et la
 difficulté augmentera légèrement. Une fois le boss vaincu, vous avez gagné la partie.
 
-Il y a deux sortes de bonus, le powerup (éclair) qui augmente la cadence de vos tirs et le coeur qui vous redonne de la vie ou du score si votre vie est déjà pleine.
+Il y a deux sortes de bonus, le power up (éclair) qui augmente la cadence de vos tirs et le cœur qui vous redonne de la vie ou du score si votre vie est déjà pleine.
 
-Le jeu est relativement difficile et peu nécessiter plusieurs tentative. (Testé à de nombreuses reprises par moi et deux autres personne)
+Le jeu est relativement difficile et peut nécessiter plusieurs tentatives. (Testé à de nombreuses reprises par moi et deux autres personne)
 Le jeu a été testé sur un PC avec une résolution de 1920x1080.
 
 ## Téléchargement
@@ -40,12 +40,12 @@ Le jeu a été testé sur un PC avec une résolution de 1920x1080.
 
 ## Solutions
 
-- Avant de glisser un gameObject dans le dossier resources, bien faire en sorte de lui assigner tous ces scripts et autres modificiations. Sinon ouvrir l'éditeur de prefab
+- Avant de glisser un gameObject dans le dossier resources, bien faire en sorte de lui assigner tous ces scripts et autres modifications. Sinon ouvrir l'éditeur de prefab
 - Le nom du prefab était en cause ce qui faisait apparaitre un problème après le build et pas avant. (Supprimer et recréer le prefab)
 - Réinitialiser ces deux valeurs à chaque fois que le joueur (re)passe par la scène du Menu.
 
 
-## Fonctionnalitées
+## Fonctionnalités
 
 - Tirer et détruire des ennemis
 - Récupérer des bonus qui offres des avantages différents
