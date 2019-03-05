@@ -11,6 +11,10 @@ Il y a deux sortes de bonus, le power up (éclair) qui augmente la cadence de vo
 Le jeu est relativement difficile et peut nécessiter plusieurs tentatives. (Testé à de nombreuses reprises par moi et deux autres personne)
 Le jeu a été testé sur un PC avec une résolution de 1920x1080.
 
+## Jouer 
+
+- Si vous ne souhaitez pas télécharger le jeu, il est jouable directement [ici](https://ebourhis.github.io/SpaceConflict/).
+
 ## Téléchargement
 
 - Le jeu est disponible en téléchargement [ici](https://github.com/eBOURHIS/Space-Conflict/releases).
